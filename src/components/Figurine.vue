@@ -1,14 +1,19 @@
 <script>
+import SingleFigurine from  '../components/SingleFigurine.vue'
 export default{
-    name: 'AppHeader',
-    props: ['message']
+    name: 'Figurine',
+    components: {
+    SingleFigurine
+  }
 }
 </script>
 
 <template>
     <header>
         <div id="logo"></div>
-        <h1>{{message}}</h1>
+        <h1>hellooooo</h1>
+        <SingleFigurine/>
+  
     </header>
 </template>
 

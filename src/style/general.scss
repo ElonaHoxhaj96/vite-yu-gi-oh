@@ -2,10 +2,7 @@
 @use 'src/style/partials/_variables.scss' as *;
 
 // inclusione di BS
-@import 'node_modules/bootstrap';
-
-//inclusione googlr font 
-@import 'node_modules/google-fonts';
+@import '../../node_modules/bootstrap/';
 
 //regole generali 
 *{
