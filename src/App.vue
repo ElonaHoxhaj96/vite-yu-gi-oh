@@ -22,8 +22,8 @@ export default {
     getFigurina(){
       axios.get(store.apiUrl)
       .then( res=> {
-        console.log(res.data);
-        store.figurineList= res.data
+        console.log(res.data.data);
+        store.figurineList= res.data.data
       })
       .catch(err => {
         console.log(err);
