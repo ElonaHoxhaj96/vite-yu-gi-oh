@@ -1,0 +1,15 @@
+// inclusione variables
+@use 'src/style/partials/_variables.scss' as *;
+
+// inclusione di BS
+@import 'node_modules/bootstrap';
+
+//inclusione googlr font 
+@import 'node_modules/google-fonts';
+
+//regole generali 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
