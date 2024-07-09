@@ -11,7 +11,6 @@ export default{
 <template>
     <header>
         <div id="logo"></div>
-        <h1>hellooooo</h1>
         <SingleFigurine/>
   
     </header>
