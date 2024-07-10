@@ -17,7 +17,7 @@ export default{
 
 <template>
     <section class="container">
-        <div class="row">
+        <div class="row bg-white cnt_card">
             <div v-for="figu in store.figurineList" :key="figu.id"  class="col-6 col-md-4 col-lg-2 mb-5">
                 <SingleFigurine :info="figu"/>
             </div>
@@ -31,5 +31,12 @@ export default{
 @use '../style/general.scss';
     h1{
         color: black;
+    }
+
+    .container{
+       padding-top: 4rem;
+        .cnt_card{
+            padding: 2.5rem;
+        }
     }
 </style>
