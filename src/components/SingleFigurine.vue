@@ -12,7 +12,7 @@ export default{
 
 <template>
     <div class="figurine text-center">
-        <img class="img-fluid mb-3" :src="info.card_images" :alt="info.name">
+        <img class="img-fluid mb-3" :src="info.card_images[0].image_url" :alt="info.name">
         <h4>{{ info.name }}</h4>
         <div>{{ info.archetype }}</div>
     </div>
