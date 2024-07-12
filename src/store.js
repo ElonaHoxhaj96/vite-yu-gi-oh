@@ -3,7 +3,7 @@ import { reactive } from 'vue'
 export const store= reactive({
     figurineList: [],
     apiUrl: "https://db.ygoprodeck.com/api/v7/cardinfo.php?num=48&offset=0",
-    loading: true,
+    // loading: true,
 
     //creo il parametro per l'archetype
     apiArchetype: 'archetype',

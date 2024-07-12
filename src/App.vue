@@ -42,7 +42,7 @@ export default {
     getArcheType(){
       axios.get(store.apiUrlArchetype)
       .then(result => {
-        store.apiUrlArchetype= result.data
+        store.archetypeList = result.data;
       })
       .catch(err => {
         console.log(err);

@@ -1,5 +1,5 @@
 <script>
-import { store } from '../store'
+import { store } from '../store.js'
 
 export default{
     name: 'AppSearch',
@@ -7,7 +7,7 @@ export default{
     return{
       store,
     }
-  },
+  }
 }
 
 </script>
@@ -17,7 +17,6 @@ export default{
         <select v-model="store.archeSelected" @change="$emit('changeArchetype')">
             <option value="none" selected="selected"> -- Select Archetype --</option>
             <option value="all">ALL</option>
-
             <option v-for="archetype in store.archetypeList" :value="archetype.archetype_name">{{ archetype.archetype_name }}</option>
         </select>
     </div>
