@@ -5,7 +5,7 @@ import { store } from '../store'
 export default{
     name: 'SingleFigurine',
     props: {
-        info : Array,
+    info: Object,
     },
      data(){
     return{

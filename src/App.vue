@@ -3,6 +3,7 @@ import axios from '../node_modules/axios';
 
 import AppHeader from './components/AppHeader.vue';
 import Figurine from './components/Figurine.vue';
+import AppSearch from './components/AppSearch.vue'
 
 //import dello store.js
 import { store } from './store'
@@ -12,6 +13,7 @@ export default {
   components: {
     AppHeader,
     Figurine,
+    AppSearch,
   },
   data(){
     return{
@@ -19,11 +21,28 @@ export default {
     }
   },
   methods:{
+    // metodo per estrarre i dati delle figurine 
     getFigurina(){
-      axios.get(store.apiUrl)
+      // definire l'endpoint
+      let endPoint = store.apiUrl;
+      if(store.archeSelected !== 'all' && store.archeSelected !== 'none'){
+        endPoint += `&${store.apiArchetype}=${store.archeSelected}`;
+      }
+
+      axios.get(endPoint)
       .then( res=> {
         console.log(res.data.data);
-        store.figurineList= res.data.data
+        store.figurineList= res.data.data;
+      })
+      .catch(err => {
+        console.log(err);
+      })
+    },
+    // metodo per richiamare l'archetype
+    getArcheType(){
+      axios.get(store.apiUrlArchetype)
+      .then(result => {
+        store.apiUrlArchetype= result.data
       })
       .catch(err => {
         console.log(err);
@@ -32,6 +51,7 @@ export default {
   },
   created(){
     this.getFigurina();
+    this.getArcheType();
   }
 }
 </script>
@@ -39,6 +59,7 @@ export default {
 <template>
   <AppHeader message="Yu-Gi-Oh Api"/>
   <main>
+    <AppSearch @changeArchetype="getFigurina"/>
     <Figurine/>
   </main>
 </template>

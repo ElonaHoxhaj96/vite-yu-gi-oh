@@ -23,9 +23,7 @@ export default{
             </div>
         </div>
     </section>
-
 </template>
-
 
 <style lang="scss" scoped>
 @use '../style/general.scss';
